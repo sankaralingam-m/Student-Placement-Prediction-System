@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+
+        <h1>Prediction Dashboard</h1>
+
+        <p>AI Placement Intelligence Analysis</p>
+
+    </div>
+
+    <div class="container">
+
+        <!-- Student Information -->
+
+        <div class="card">
+
+            <h2>👤 Student Information</h2>
+
+            <h3>{{ student_name }}</h3>
+
+        </div>
+
+        <!-- Prediction Result -->
+
+        <div class="card">
+
+            <h2>📊 Prediction Result</h2>
+
+            {% if "PLACED" in status %}
+
+                <h1 style="color:#22c55e;">
+                    {{ status }}
+                </h1>
+
+            {% else %}
+
+                <h1 style="color:#ef4444;">
+                    {{ status }}
+                </h1>
+
+            {% endif %}
+
+            <h3>Confidence Score</h3>
+
+            <h2>{{ confidence }}%</h2>
+
+            <div class="progress-container">
+
+                <div class="progress-bar"
+                     style="width:{{ confidence }}%;">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Recommendation -->
+
+        <div class="card">
+
+            <h2>🤖 AI Recommendation</h2>
+
+            <p>{{ recommendation }}</p>
+
+        </div>
+
+        <!-- AI Analysis -->
+
+        <div class="card">
+
+            <h2>📈 AI Analysis</h2>
+
+            <ul>
+                <li>CGPA strongly influences placement chances.</li>
+                <li>Projects improve employability.</li>
+                <li>Coding skills significantly impact predictions.</li>
+                <li>Communication skills affect interview performance.</li>
+                <li>Internships increase industry readiness.</li>
+            </ul>
+
+        </div>
+
+        <!-- Predict Again Button -->
+
+        <a href="/">
+            <button class="predict-btn">
+                Predict Again
+            </button>
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="hero">
+
+        <p>
+            Powered by Flask • Scikit-Learn • Logistic Regression
+        </p>
+
+    </div>
+
+</body>
+</html>

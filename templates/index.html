@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Placement Intelligence</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+
+        <h1>AI Placement Intelligence</h1>
+
+        <p>
+            Machine Learning Powered Placement Prediction Platform
+        </p>
+
+    </div>
+
+    <div class="container">
+
+        <form method="POST" action="/predict">
+
+            <div class="card">
+
+                <h2>👤 Personal Information</h2>
+
+                <input type="text"
+                       name="student_name"
+                       placeholder="Student Name"
+                       required>
+
+                <input type="number"
+                       name="age"
+                       placeholder="Age"
+                       required>
+
+                <select name="gender">
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+
+            </div>
+
+            <div class="card">
+
+                <h2>🎓 Academic Details</h2>
+
+                <select name="degree">
+                    <option value="0">B.Sc</option>
+                    <option value="1">B.Tech</option>
+                    <option value="2">BCA</option>
+                    <option value="3">MCA</option>
+                </select>
+
+                <select name="branch">
+                    <option value="0">CSE</option>
+                    <option value="1">Civil</option>
+                    <option value="2">ECE</option>
+                    <option value="3">IT</option>
+                    <option value="4">ME</option>
+                </select>
+
+                <input type="number" step="0.01"
+                       name="cgpa"
+                       placeholder="CGPA">
+
+                <input type="number"
+                       name="internships"
+                       placeholder="Internships">
+
+                <input type="number"
+                       name="projects"
+                       placeholder="Projects">
+
+                <input type="number"
+                       name="certifications"
+                       placeholder="Certifications">
+
+                <input type="number"
+                       name="backlogs"
+                       placeholder="Backlogs">
+
+            </div>
+
+            <div class="card">
+
+                <h2>⚡ Skills Assessment</h2>
+
+                <input type="number"
+                       name="coding_skills"
+                       placeholder="Coding Skills(1-10)">
+
+                <input type="number"
+                       name="communication_skills"
+                       placeholder="Communication Skills(1-10)">
+
+                <input type="number"
+                       name="aptitude"
+                       placeholder="Aptitude Test Score(0-100)">
+
+                <input type="number"
+                       name="soft_skills"
+                       placeholder="Soft Skills Rating(1-10)">
+
+            </div>
+
+            <button class="predict-btn" type="submit">
+                Analyze Placement Probability
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
